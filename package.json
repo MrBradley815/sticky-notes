@@ -1,0 +1,15 @@
+{
+  "name": "sticky-notes",
+  "version": "1.0.0",
+  "description": "Create sticky notes for your desktop or friends",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Brad Proctor",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.1.3"
+  }
+}

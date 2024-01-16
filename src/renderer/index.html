@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <title>Stickeez!</title>
+  </head>
+  <body>
+    <div class="window">
+      <div class="window-content">
+        <div class="tabs">
+          <button type="button" class="tab-link" data-tab-id="home">Home</button>
+          <button type="button" id="default-tab" class="tab-link" data-tab-id="new-note">New note</button>
+          <button type="button" class="tab-link" data-tab-id="friends">Friends</button>
+          <button type="button" class="tab-link" data-tab-id="settings">Settings</button>
+        </div>
+
+        <div id="home" class="tab-content">
+          <div class="container">
+            <h3 class="content-title">Home</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, fuga.</p>
+          </div>
+        </div>
+
+        <div id="new-note" class="tab-content">
+          <div class="container">
+            <h3 class="content-title">New note</h3>
+            <div id="new-note-container">
+              <button type="button" id="new-note-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                  <path
+                    d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="friends" class="tab-content">
+          <div class="container">
+            <h3 class="content-title">Friends</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, nobis.</p>
+          </div>
+        </div>
+
+        <div id="settings" class="tab-content">
+          <div class="container">
+            <h3 class="content-title">Settings</h3>
+            <div class="setting-group">
+              <p class="setting-title">Dark mode</p>
+              <div class="dark-mode-group">
+                <input type="radio" id="dark-mode" name="dark-mode" value="dark" />
+                <label for="dark-mode" data-mode="dark">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                    <path
+                      d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z" />
+                  </svg>
+                </label>
+                <input type="radio" id="light-mode" name="dark-mode" value="light" checked />
+                <label for="light-mode" data-mode="light">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                    <path
+                      d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z" />
+                  </svg>
+                </label>
+              </div>
+            </div>
+            <div class="setting-group">
+              <p class="setting-title">Primary color</p>
+              <select name="primary-color" id="primary-color">
+                <option value="#e53935">Red</option>
+                <option value="#ffb74d">Orange</option>
+                <option value="#ffee58">Yellow</option>
+                <option value="#388e5a">Green</option>
+                <option value="#42a5f5" selected>Blue</option>
+                <option value="#8756d5">Indigo</option>
+                <option value="#ea9bd7">Violet</option>
+              </select>
+            </div>
+          </div>
+          <div class="menu">
+            <button type="button" class="btn btn-secondary" id="reset-settings">Reset</button>
+            <button type="button" class="btn btn-primary" id="save-settings">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./Note.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

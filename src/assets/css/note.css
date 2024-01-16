@@ -1,0 +1,66 @@
+html {
+  font-size: 62.5% !important;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-app-region: drag;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.note {
+  position: relative;
+  background-color: #feff9c;
+  width: 30rem;
+  height: 30rem;
+  padding: 3.6rem 1.6rem 1.6rem 1.6rem;
+  border: 1px solid #eaeb9b;
+}
+
+#note-text {
+  font-family: sans-serif;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  resize: none;
+  -webkit-app-region: drag;
+}
+
+.note-menu {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.note-menu-btn {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.note-menu-btn > svg {
+  fill: #dddddd;
+  width: 80%;
+  -webkit-app-region: no-drag;
+}
+
+.note-menu-btn:hover > svg {
+  fill: #bbbbbb;
+}
+
+#save-note,
+#cancel-note {
+  display: none;
+}
