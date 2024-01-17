@@ -44,6 +44,12 @@ button {
   outline: 0;
 }
 
+.title {
+  font-weight: normal;
+  text-decoration: underline;
+  margin-bottom: 0.4rem;
+}
+
 .window-content {
   display: flex;
   height: 100vh;
@@ -127,7 +133,49 @@ button {
   background-color: var(--color-gray-300);
 }
 
-/* NEW STICKY NOTE TAB */
+/***** HOME TAB *****/
+.home-content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.note-list {
+  list-style: none;
+}
+
+.note-list-item {
+  position: relative;
+  margin-bottom: 0.6rem;
+  padding: 1rem 1.4rem;
+  border: 1px solid var(--color-gray-100);
+  cursor: pointer;
+}
+
+.note-list-item > span {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 0.6rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.note-list-item:hover > span {
+  display: inline-block;
+}
+
+.note-list-item svg {
+  fill: var(--color-gray-500);
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.note-list-item svg:hover {
+  fill: #f57272;
+}
+
+/***** NEW STICKY NOTE TAB *****/
 #new-note-container {
   position: relative;
   width: 30rem;
@@ -164,7 +212,7 @@ button {
   z-index: 999;
 }
 
-/* SETTINGS TAB */
+/***** SETTINGS TAB *****/
 .setting-group {
   position: relative;
   margin-bottom: 20px;

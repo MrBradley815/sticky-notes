@@ -49,7 +49,7 @@ function handleCreateNote() {
 function handleReset() {
   configSettings = {
     darkMode: 'light',
-    primaryColor: '#42a5f5',
+    themeColor: '#42a5f5',
   };
 
   resetSettingsUI();
@@ -60,20 +60,20 @@ function handleReset() {
 function resetSettingsUI() {
   const body = document.querySelector('body');
   const lightMode = document.querySelector('#light-mode');
-  const primaryColor = document.querySelector('#primary-color');
+  const themeColor = document.querySelector('#theme-color');
 
   body.classList.remove('dark');
   lightMode.checked = true;
   document.documentElement.style.setProperty('--color-primary', '#42a5f5');
-  primaryColor.value = '#42a5f5';
+  themeColor.value = '#42a5f5';
 }
 
 function handleSave() {
   const darkMode = document.querySelector('input[name="dark-mode"]:checked').value;
-  const primaryColor = document.querySelector('#primary-color').value;
+  const themeColor = document.querySelector('#theme-color').value;
 
   configSettings.darkMode = darkMode;
-  configSettings.primaryColor = primaryColor;
+  configSettings.themeColor = themeColor;
 
   saveSettingsUI();
 
@@ -83,8 +83,8 @@ function handleSave() {
 function saveSettingsUI() {
   const body = document.querySelector('body');
   const darkMode = document.querySelector('input[name="dark-mode"]:checked').value;
-  const primaryColorPicker = document.querySelector('#primary-color');
-  const primaryColor = primaryColorPicker.value;
+  const themeColorPicker = document.querySelector('#theme-color');
+  const themeColor = themeColorPicker.value;
 
   if (darkMode === 'dark') {
     body.classList.add('dark');
@@ -92,14 +92,14 @@ function saveSettingsUI() {
     body.classList.remove('dark');
   }
 
-  document.documentElement.style.setProperty('--color-primary', primaryColor);
-  primaryColorPicker.value = primaryColor;
+  document.documentElement.style.setProperty('--color-primary', themeColor);
+  themeColorPicker.value = themeColor;
 }
 
 function loadSettingsUI() {
-  const { darkMode, primaryColor } = configSettings;
+  const { darkMode, themeColor } = configSettings;
   const darkModeBtn = document.querySelector('#dark-mode');
-  const primaryColorPicker = document.querySelector('#primary-color');
+  const themeColorPicker = document.querySelector('#theme-color');
 
   if (darkMode === 'dark') {
     const body = document.querySelector('body');
@@ -107,10 +107,10 @@ function loadSettingsUI() {
     darkModeBtn.checked = true;
   }
 
-  if (!primaryColor) {
-    primaryColorPicker.value = '#42a5f5';
+  if (!themeColor) {
+    themeColorPicker.value = '#42a5f5';
   } else {
-    document.documentElement.style.setProperty('--color-primary', primaryColor);
-    primaryColorPicker.value = primaryColor;
+    document.documentElement.style.setProperty('--color-primary', themeColor);
+    themeColorPicker.value = themeColor;
   }
 }
