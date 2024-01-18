@@ -2,6 +2,8 @@ const tabs = document.querySelectorAll('.tab-link');
 const newNoteBtn = document.querySelector('#new-note-btn');
 const resetBtn = document.querySelector('#reset-settings');
 const saveBtn = document.querySelector('#save-settings');
+const signUpLink = document.querySelector('#sign-up-link');
+const loginLink = document.querySelector('#login-link');
 let configSettings;
 
 tabs.forEach((tab) => {
@@ -13,6 +15,8 @@ tabs.forEach((tab) => {
 newNoteBtn.addEventListener('click', handleCreateNote);
 resetBtn.addEventListener('click', handleReset);
 saveBtn.addEventListener('click', handleSave);
+signUpLink.addEventListener('click', toggleForm);
+loginLink.addEventListener('click', toggleForm);
 
 document.querySelector('#default-tab').click();
 
@@ -20,6 +24,19 @@ window.bridge.configSettings((e, settings) => {
   configSettings = settings;
   loadSettingsUI();
 });
+
+function toggleForm() {
+  const loginForm = document.querySelector('#login');
+  const signUpForm = document.querySelector('#sign-up');
+
+  if (loginForm.style.display === 'block') {
+    loginForm.style.display = 'none';
+    signUpForm.style.display = 'block';
+  } else {
+    loginForm.style.display = 'block';
+    signUpForm.style.display = 'none';
+  }
+}
 
 function openTab(tab) {
   const tabId = tab.dataset.tabId;

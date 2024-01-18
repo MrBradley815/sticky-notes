@@ -50,6 +50,10 @@ button {
   margin-bottom: 0.4rem;
 }
 
+.window.blur {
+  filter: blur(5px);
+}
+
 .window-content {
   display: flex;
   height: 100vh;
@@ -248,6 +252,70 @@ button {
 
 .dark-mode-group > input:checked + label {
   border-color: var(--color-primary);
+}
+
+/***** LOGIN MODAL *****/
+#login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 999;
+}
+
+#login-modal.closed {
+  display: none;
+}
+
+#login-modal .overlay {
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  padding: 1rem;
+}
+
+.modal-container {
+  background-color: var(--color-white-100);
+  width: 100%;
+  min-width: 20rem;
+  max-width: 30rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+#login-modal h2 {
+  margin-bottom: 2rem;
+}
+
+#login-modal input {
+  width: 100%;
+  padding: 6px 12px;
+}
+
+#login-modal .btn {
+  width: 100%;
+}
+
+#login-modal p {
+  font-size: 10px;
+  margin-bottom: 1rem;
+}
+
+#sign-up-link,
+#login-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#sign-up {
+  display: none;
 }
 
 /*********************/

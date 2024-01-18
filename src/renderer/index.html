@@ -8,7 +8,7 @@
     <title>Stickeez!</title>
   </head>
   <body>
-    <div class="window">
+    <div class="window blur">
       <div class="window-content">
         <div class="tabs">
           <button type="button" id="default-tab" class="tab-link" data-tab-id="home">Home</button>
@@ -174,6 +174,38 @@
           <div class="menu">
             <button type="button" class="btn btn-secondary" id="reset-settings">Reset</button>
             <button type="button" class="btn btn-primary" id="save-settings">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="login-modal">
+      <div class="overlay">
+        <div class="modal-container">
+          <div id="login">
+            <h2>Sign in</h2>
+            <div class="input-group">
+              <input type="email" id="email" placeholder="email" />
+            </div>
+            <div class="input-group">
+              <input type="password" id="password" placeholder="password" />
+            </div>
+            <p>Need an account? Sign up <span id="sign-up-link">here</span></p>
+            <button type="button" class="btn btn-primary">Login</button>
+          </div>
+          <div id="sign-up">
+            <h2>Register</h2>
+            <div class="input-group">
+              <input type="text" id="name" placeholder="name" />
+            </div>
+            <div class="input-group">
+              <input type="email" id="email" placeholder="email" />
+            </div>
+            <div class="input-group">
+              <input type="password" id="password" placeholder="password" />
+            </div>
+            <p>Have an account? Login <span id="login-link">here</span></p>
+            <button type="button" class="btn btn-primary">Sign up</button>
           </div>
         </div>
       </div>
